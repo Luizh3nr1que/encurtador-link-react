@@ -1,0 +1,66 @@
+.modal-container {
+    position: absolute;
+    bottom: 78px;
+    background-color: #fff;
+    padding: 14px;
+    width: 700px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    animation: slide .5s;
+}
+
+@keyframes slide {
+    from {
+        transform: translateY(-90px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header button {
+    border: none;
+    background-color: transparent;
+    transition: .4s;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-header button:hover {
+    background-color: rgb(255, 92, 92);
+}
+
+.modal-container span {
+    margin: 14px 0;
+    color: #545454;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.modal-link {
+    background-color: #1d1d42;
+    border: 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 15px;
+    padding: 5px 10px;
+}
+
+@media screen and (max-width:735px) {
+    .modal-container {
+        width: 90%;
+    }
+}

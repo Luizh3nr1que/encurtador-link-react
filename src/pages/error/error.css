@@ -1,0 +1,66 @@
+.error-container {
+    max-width: 600px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-container img {
+    width: 100%;
+    animation: slideCaindo 1s linear alternate;
+}
+
+@keyframes slideCaindo {
+    from {
+        transform: translateY(-130px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.escritaErro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: slideSubindo 1s linear alternate;
+}
+
+@keyframes slideSubindo {
+    from {
+        opacity: .5;
+        transform: translateY(130px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+.error-container h1 {
+    color: #fff;
+    font-size: 40px;
+}
+
+.error-container button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.132);
+    transition: .4s;
+}
+
+.error-container button:hover {
+    border: 1px solid rgb(96, 150, 251);
+    background-color: rgb(96, 150, 251);
+}
