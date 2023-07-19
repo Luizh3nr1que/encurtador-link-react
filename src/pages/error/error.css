@@ -14,11 +14,11 @@
 
 @keyframes slideCaindo {
     from {
-        transform: translateY(-130px);
+        transform: translateX(-130px);
     }
 
     to {
-        transform: translateY(0px);
+        transform: translateX(0px);
     }
 }
 
