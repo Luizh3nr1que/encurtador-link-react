@@ -12,6 +12,7 @@ export default function Home() {
     const [showModal, setShowModal] = useState(false);
     const [data, setData] = useState({});
     const [erro, setErro] = useState(false);
+    const [erro429, setErro429] = useState(false);
 
     async function handleShortLink() {
         try {
@@ -26,8 +27,14 @@ export default function Home() {
 
             setLink('');
 
-        } catch {
-            setErro(true);
+        } catch (error) {
+            if (error.response && error.response.status === 429) {
+                setErro429(true);
+                setErro(false);
+            } else {
+                setErro429(false);
+                setErro(true);
+            }
             setLink('');
         }
     }
@@ -54,7 +61,11 @@ export default function Home() {
             </div>
 
             {erro && (
-                <span className='erroMsg'>Insira um Link Valido! </span>
+                <span className='erroMsg'>Insira um Link Valido!</span>
+            )}
+
+            {erro429 && (
+                <span className='erroMsg erromsg429'>Número de requisições excedido. Tente novamente mais tarde.</span>
             )}
 
 
